@@ -90,4 +90,6 @@ if __name__ == "__main__":
     root = tk.Tk() #tworzenie okna 
     game = SlotsGame(root) #inicjalizowanie gry
     root.mainloop() #uruchomienie petli 
+    
+    #commit
  

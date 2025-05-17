@@ -18,7 +18,7 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch \
-              --account-name ${{ secrets.slotsswps }} \
+              --account-name ${{ secrets.https://github.com/kacpe12344/slots }} \
               --account-key ${{ secrets.RIormTWEOnPvHQMyv/uFiO3/GjdaPLWxfxkGBKUQ90+qL8LwnRuorDJUVHDdTZSlN3s2AVgXwDxt+AStC/Xzcg== }} \
               --source ./public \
               --destination '$web' \
