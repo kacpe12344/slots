@@ -1,0 +1,25 @@
+name: Deploy Game to Azure Static Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Upload files to Azure Static Website
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob upload-batch \
+              --account-name ${{ secrets.slotsswps }} \
+              --account-key ${{ secrets.RIormTWEOnPvHQMyv/uFiO3/GjdaPLWxfxkGBKUQ90+qL8LwnRuorDJUVHDdTZSlN3s2AVgXwDxt+AStC/Xzcg== }} \
+              --source ./public \
+              --destination '$web' \
+              --overwrite
